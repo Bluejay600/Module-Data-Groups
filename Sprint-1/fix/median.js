@@ -5,24 +5,24 @@
 // Hint: Please consider scenarios when 'list' doesn't have numbers (the function is expected to return null)
 // or 'list' has mixed values (the function is expected to sort only numbers).
 
-function calculateMedian(list) {
-  // Filter to include only numbers
-  const numbers = list.filter(item => typeof item === 'number');
+function calculateMedian(arr) {
+  // Verify the input is a non-empty array
+  if (!Array.isArray(arr)) return null;
 
-  // If no valid numbers, return null
-  if (numbers.length === 0) return null;
+  // Filter out non-number values (keep only actual numbers)
+  const nums = arr.filter(val => typeof val === "number" && !isNaN(val));
 
-  // Sort numbers in ascending order
-  numbers.sort((a, b) => a - b);
+  if (nums.length === 0) return null;
 
-  const mid = Math.floor(numbers.length / 2);
+  // Clone and sort the numbers to preserve input array
+  const sorted = [...nums].sort((a, b) => a - b);
 
-  // If odd length, return the middle number
-  if (numbers.length % 2 !== 0) {
-    return numbers[mid];
-  }
-   // If even length, return the average of the two middle numbers
-  return (numbers[mid - 1] + numbers[mid]) / 2;
+  const mid = Math.floor(sorted.length / 2);
+
+  // Return median based on even/odd length
+  return sorted.length % 2 !== 0
+    ? sorted[mid]
+    : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
 module.exports = calculateMedian;
