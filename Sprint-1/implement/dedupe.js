@@ -1,4 +1,4 @@
-function dedupe() {
+function dedupe(array) {
   const seen = new Set();
   const result = [];
 
