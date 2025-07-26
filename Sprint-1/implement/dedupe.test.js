@@ -20,10 +20,14 @@ describe("dedupe", () => {
 test.todo("given an empty array, it returns an empty array");
   expect(dedupe([])).toEqual([]);
   });
-  
+
 // Given an array with no duplicates
 // When passed to the dedupe function
 // Then it should return a copy of the original array
+test("given an array with no duplicates, it returns a copy of the original array", () => {
+    expect(dedupe(['x', 'y', 'z'])).toEqual(['x', 'y', 'z']);
+    expect(dedupe([1, 2, 3])).toEqual([1, 2, 3]);
+  });
 
 // Given an array with strings or numbers
 // When passed to the dedupe function
