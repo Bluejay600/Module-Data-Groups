@@ -502,3 +502,8 @@ function displayQuote(quoteObj) {
   quoteElement.innerText = quoteObj.quote;
   authorElement.innerText = quoteObj.author;
 }
+window.addEventListener("DOMContentLoaded", () => {
+  const newQuoteBtn = document.getElementById("new-quote");
+
+  // Show initial quote
+  displayQuote(getRandomQuote());
