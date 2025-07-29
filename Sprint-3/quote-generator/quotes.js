@@ -507,3 +507,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Show initial quote
   displayQuote(getRandomQuote());
+  // Show a new quote when the button is clicked
+  newQuoteBtn.addEventListener("click", () => {
+    displayQuote(getRandomQuote());
+  });
+});
