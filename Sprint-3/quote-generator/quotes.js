@@ -495,3 +495,10 @@ function getRandomQuote() {
   const index = Math.floor(Math.random() * quotes.length);
   return quotes[index];
 }
+function displayQuote(quoteObj) {
+  const quoteElement = document.getElementById("quote");
+  const authorElement = document.getElementById("author");
+
+  quoteElement.innerText = quoteObj.quote;
+  authorElement.innerText = quoteObj.author;
+}
